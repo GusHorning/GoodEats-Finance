@@ -1,0 +1,67 @@
+{
+"contract": {
+"company": "GoodEats",
+"department": "Finance",
+"dataFile": "orders.json",
+"fileFormat": "JSON array of order objects",
+"fields": [
+{
+"field": "id",
+"type": "text",
+"example": "ORD101",
+"meaning": "a unique id for this row"
+},
+{
+"field": "orderDate",
+"type": "date (YYYY-MM-DD)",
+"example": "2026-10-01",
+"meaning": "date the order was placed"
+},
+{
+"field": "customerName",
+"type": "text",
+"example": "Alex Smith",
+"meaning": "name of the customer"
+},
+{
+"field": "itemsSummary",
+"type": "text",
+"example": "2x Tacos, 1x Drink",
+"meaning": "brief description of items ordered"
+},
+{
+"field": "totalAmount",
+"type": "number",
+"example": 24.50,
+"meaning": "total dollar amount of the order"
+},
+{
+"field": "paymentMethod",
+"type": "text",
+"example": "Credit Card",
+"meaning": "method used or intended for payment"
+},
+{
+"field": "isPaid",
+"type": "yes/no",
+"example": "no",
+"meaning": "whether the order has been paid"
+}
+],
+"tagField": "isPaid",
+"summaryNumbers": [
+"Total Orders (count of all rows)",
+"Total Revenue (sum of totalAmount where isPaid is yes)",
+"Outstanding Balance (sum of totalAmount where isPaid is no)"
+],
+"alertRule": "isPaid is no",
+"pageHooks": [
+"#title",
+"#summary",
+"#list",
+".card",
+".tag",
+".alert"
+]
+}
+}
